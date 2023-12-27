@@ -1,11 +1,24 @@
 {
-  "name": "hrnet-modal",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
+  "name": "redbous-hrnet-modal",
+  "version": "0.1.5",
+  "private": false,
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/redonebous/P14-HRnet-modal-package.git"
+  },
+  "devDependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.0",
+    "babel-preset-react-app": "^10.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -13,16 +26,19 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "description": "Simple react modal for OpenClassrooms projet 14",
+  "author": {
+    "name": "Redwane Bouselham"
   },
+  "keywords": [
+    "modal",
+    "react"
+  ],
+  "license": "ISC",
   "browserslist": {
     "production": [
       ">0.2%",
@@ -34,5 +50,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "engines": {
+    "node": "*"
   }
 }
